@@ -1,7 +1,7 @@
 #include <iostream>
 
 void bubbleSort(int *array){
-
+    array[0] = 1000;
 }
 
 int main(){
