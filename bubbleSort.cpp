@@ -1,7 +1,17 @@
 #include <iostream>
 
 void bubbleSort(int *array){
-    array[0] = 1000;
+    int temp, i, j;
+    
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+            if(array[j] > array[j+1]){
+                temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
+            }
+        }
+    }
 }
 
 int main(){
