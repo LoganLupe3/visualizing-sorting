@@ -1,4 +1,9 @@
 #include <iostream>
+#include <SFML/Graphics.hpp>
+
+void swap(int i, int j, int x, int y){
+
+}
 
 void bubbleSort(int *array){
     int temp, i, j;
@@ -15,6 +20,22 @@ void bubbleSort(int *array){
 }
 
 int main(){
+    //Create the window
+    sf::RenderWindow window(sf::VideoMode(800,600), "test");
+
+    while(window.isOpen()){
+        sf::Event e;
+        
+        while(window.pollEvent(e)){
+            if(e.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.display();
+    }
+
+
     srand(time(NULL));
 
     int *array = new int[10];
