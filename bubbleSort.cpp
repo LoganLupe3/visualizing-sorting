@@ -23,19 +23,6 @@ int main(){
     //Create the window
     sf::RenderWindow window(sf::VideoMode(800,600), "test");
 
-    while(window.isOpen()){
-        sf::Event e;
-        
-        while(window.pollEvent(e)){
-            if(e.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.display();
-    }
-
-
     srand(time(NULL));
 
     int *array = new int[10];
@@ -56,6 +43,18 @@ int main(){
         printf("%d ", array[i]);
     }
     printf("\n");
+
+    while(window.isOpen()){
+        sf::Event e;
+        
+        while(window.pollEvent(e)){
+            if(e.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.display();
+    }
 
     return 0;
 }
