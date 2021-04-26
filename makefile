@@ -1,5 +1,5 @@
 app: bubbleSort.o
-	g++ bubbleSort.o -o -lsfml-graphics -lsfml-window -lsfml-system
+	g++ bubbleSort.o -o app -lsfml-graphics -lsfml-window -lsfml-system
 
 
 bubbleSort.o: bubbleSort.cpp
