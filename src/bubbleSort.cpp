@@ -1,19 +1,27 @@
 #include <iostream>
+#include <vector>
+#include <iterator>
 #include <SFML/Graphics.hpp>
+
+using namespace std;
+
+vector<int> nums;
+int size = 100;
+int gap = 4;
 
 void swap(int i, int j, int x, int y){
 
 }
 
-void bubbleSort(int *array){
+void bubbleSort(){
     int temp, i, j;
     
     for(int i = 0; i < 10; i++){
         for(int j = 0; j < 10; j++){
-            if(array[j] > array[j+1]){
-                temp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = temp;
+            if(nums[j] > nums[j+1]){
+                temp = nums[j];
+                nums[j] = nums[j+1];
+                nums[j+1] = temp;
             }
         }
     }
@@ -27,22 +35,23 @@ int main(){
 
     srand(time(NULL));
 
-    int *array = new int[10];
-    for(int i = 0; i < 10; i++){
-        array[i] = rand() % 10;
+    //Initialize array with random values (1-100 inclsive)
+    for(int i = 0; i < size; i++){
+        nums[i] = rand() % 100 + 1;
     }
+    
 
     printf("Unsorted:\n");
-    for(int i = 0; i < 10; i++){
-        printf("%d ", array[i]);
+    for(int i = 0; i < size; i++){
+        printf("%d ", nums[i]);
     }
     printf("\n");
 
-    bubbleSort(array);
+    bubbleSort();
 
     printf("Sorted:\n");
-    for(int i = 0; i < 10; i++){
-        printf("%d ", array[i]);
+    for(int i = 0; i < size; i++){
+        printf("%d ", nums[i]);
     }
     printf("\n");
 
