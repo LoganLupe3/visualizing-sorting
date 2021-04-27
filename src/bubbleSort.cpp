@@ -75,7 +75,8 @@ int main(){
         window.clear();
         //Draw rectangles
         for(int i = 0; i < size; i++){
-            rectangles[i].setSize(sf::Vector2f(7.69, nums[i]));
+            rectangles[i].setSize(sf::Vector2f(3.69, nums[i]));
+            rectangles[i].setFillColor(sf::Color::White);
             rectangles[i].setPosition((i*7.69), 600);
             window.draw(rectangles[i]);
         }
