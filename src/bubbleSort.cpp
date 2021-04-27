@@ -22,6 +22,8 @@ void bubbleSort(int *array){
 int main(){
     //Create the window
     sf::RenderWindow window(sf::VideoMode(800,600), "test");
+    sf::RectangleShape rect(sf::Vector2f(120, 50));
+    rect.setSize(sf::Vector2f(100,100));
 
     srand(time(NULL));
 
@@ -53,6 +55,7 @@ int main(){
         }
 
         window.clear();
+        window.draw(rect);
         window.display();
     }
 
