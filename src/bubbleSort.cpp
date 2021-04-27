@@ -1,3 +1,9 @@
+/*
+    Visualizing sorting algorithms
+    Logan Lupeamanu
+    https://github.com/LoganLupe3/visualizing-sorting
+*/
+
 #include <iostream>
 #include <vector>
 #include <iterator>
@@ -5,7 +11,8 @@
 
 using namespace std;
 
-int *nums;
+sf::RectangleShape *rectangles;
+int *nums; //These numbers will determine the height of the rectangles that will be sorted
 int size = 100;
 int gap = 4;
 
@@ -28,13 +35,12 @@ void bubbleSort(){
 }
 
 int main(){
-    //Allocate memory to array
+    //Allocate memory to nums and rectangles
     nums = new int[size];
+    rectangles = new sf::RectangleShape[size];
 
     //Create the window
     sf::RenderWindow window(sf::VideoMode(800,600), "test");
-    sf::RectangleShape rect(sf::Vector2f(120, 50));
-    rect.setSize(sf::Vector2f(100,100));
 
     srand(time(NULL));
 
@@ -67,12 +73,19 @@ int main(){
         }
 
         window.clear();
-        window.draw(rect);
+        //Draw rectangles
+        for(int i = 0; i < size; i++){
+            rectangles[i].setSize(sf::Vector2f(7.69, nums[i]));
+            rectangles[i].setPosition(sf::Vector2f((i*7.69), 600));
+            window.draw(rectangles[i]);
+        }
+
         window.display();
     }
 
     //Clean up allocated memory
     delete nums;
+    delete rectangles;
 
     return 0;
 }
