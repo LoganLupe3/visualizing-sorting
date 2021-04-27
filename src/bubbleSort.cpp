@@ -5,7 +5,7 @@
 
 using namespace std;
 
-vector<int> nums;
+int *nums;
 int size = 100;
 int gap = 4;
 
@@ -28,6 +28,9 @@ void bubbleSort(){
 }
 
 int main(){
+    //Allocate memory to array
+    nums = new int[size];
+
     //Create the window
     sf::RenderWindow window(sf::VideoMode(800,600), "test");
     sf::RectangleShape rect(sf::Vector2f(120, 50));
@@ -67,6 +70,9 @@ int main(){
         window.draw(rect);
         window.display();
     }
+
+    //Clean up allocated memory
+    delete nums;
 
     return 0;
 }
