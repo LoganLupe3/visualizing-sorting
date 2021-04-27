@@ -11,7 +11,6 @@
 
 using namespace std;
 
-sf::RectangleShape *rectangles;
 int *nums; //These numbers will determine the height of the rectangles that will be sorted
 int size = 100;
 int gap = 4;
@@ -35,9 +34,10 @@ void bubbleSort(){
 }
 
 int main(){
-    //Allocate memory to nums and rectangles
+    //Allocate memory to nums
     nums = new int[size];
-    rectangles = new sf::RectangleShape[size];
+
+    sf::RectangleShape rectangles[size];
 
     //Create the window
     sf::RenderWindow window(sf::VideoMode(800,600), "test");
@@ -85,7 +85,6 @@ int main(){
 
     //Clean up allocated memory
     delete nums;
-    delete rectangles;
 
     return 0;
 }
