@@ -72,7 +72,7 @@ int main(){
                 window.close();
         }
 
-        window.clear();
+        //window.clear();
         //Draw rectangles
         for(int i = 0; i < size; i++){
             rectangles[i].setSize(sf::Vector2f(3.69, nums[i]));
